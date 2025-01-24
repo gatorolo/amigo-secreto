@@ -1,6 +1,5 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
  const nombre = document.getElementById("amigo");
- const botonSorteo = document.getElementById("button-draw");
  const lista = document.getElementById("resultado");
  
 
