@@ -73,6 +73,8 @@ function sortearAmigo() {
         document.getElementById("mensaje").style.color = "";
     }else {
         alert('no hay participantes para sortear');
+        document.getElementById("mensaje").textContent = "";
+        document.getElementById("mensaje").style.color = "";
     }
       
     
