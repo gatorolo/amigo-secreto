@@ -35,28 +35,28 @@
  let listaAmigos = [];
  
 
- function agregarAmigo() {
+function agregarAmigo() {
 
-    let nombre = document.getElementById("amigo");
+   let nombre = document.getElementById("amigo");
 
-      if (/\d/.test(nombre.value)) {
-       document.getElementById("mensaje").textContent = "El nombre no puede contener números.";
-        document.getElementById("mensaje").style.color = "red";
+     if (/\d/.test(nombre.value)) {
+      document.getElementById("mensaje").textContent = "El nombre no puede contener números.";
+       document.getElementById("mensaje").style.color = "red";
         
          
     }else {
-           document.getElementById("mensaje").textContent = "El nombre es válido.";
-           document.getElementById("mensaje").style.color = "green";
+          document.getElementById("mensaje").textContent = "El nombre es válido.";
+          document.getElementById("mensaje").style.color = "green";
         let li = document.createElement('li');
         let liText = document.createTextNode(nombre.value);
         li.appendChild(liText);
-         lista.appendChild(li);
-         listaAmigos.push(nombre.value);
+        lista.appendChild(li);
+        listaAmigos.push(nombre.value);
        
-         console.log(listaAmigos);
-     }
-        nombre.value = "";
-     }
+        console.log(listaAmigos);
+    }
+       nombre.value = "";
+    }
 
 
 
@@ -69,6 +69,8 @@ function sortearAmigo() {
         alert(`El Ganador del Sorteo es : ${ganador}`);
         lista.innerHTML = '';
         listaAmigos = [];
+        document.getElementById("mensaje").textContent = "";
+        document.getElementById("mensaje").style.color = "";
     }else {
         alert('no hay participantes para sortear');
     }
