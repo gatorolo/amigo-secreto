@@ -30,30 +30,33 @@
 //         alert('No hay participantes para sortear');
 //     }
 // }
- let lista = document.getElementById("resultado");
+  let lista = document.getElementById("resultado");
 
-let listaAmigos = [];
+ let listaAmigos = [];
  
 
-function agregarAmigo() {
+ function agregarAmigo() {
 
-   let nombre = document.getElementById("amigo");
+    let nombre = document.getElementById("amigo");
 
-     if (/\d/.test(nombre.value)) {
-       alert('Ingresa un Nombre Válido!');
+      if (/\d/.test(nombre.value)) {
+       document.getElementById("mensaje").textContent = "El nombre no puede contener números.";
+        document.getElementById("mensaje").style.color = "red";
         
          
     }else {
+           document.getElementById("mensaje").textContent = "El nombre es válido.";
+           document.getElementById("mensaje").style.color = "green";
         let li = document.createElement('li');
         let liText = document.createTextNode(nombre.value);
         li.appendChild(liText);
-        lista.appendChild(li);
-        listaAmigos.push(nombre.value);
+         lista.appendChild(li);
+         listaAmigos.push(nombre.value);
        
-        console.log(listaAmigos);
-    }
-       nombre.value = "";
-    }
+         console.log(listaAmigos);
+     }
+        nombre.value = "";
+     }
 
 
 
@@ -72,6 +75,4 @@ function sortearAmigo() {
       
     
 }
-
-
 
