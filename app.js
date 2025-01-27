@@ -1,6 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
- const nombre = document.getElementById("amigo");
- let lista = document.getElementById("resultado");
+ 
+
  
 
 //   let listaAmigos = [];
@@ -30,26 +30,33 @@
 //         alert('No hay participantes para sortear');
 //     }
 // }
+ let lista = document.getElementById("resultado");
 
 let listaAmigos = [];
+ 
 
 function agregarAmigo() {
-    if(isNaN(nombre.value)) {
 
-        let li = document.createElement('li');
-        let litext = document.createTextNode(nombre.value);
+   let nombre = document.getElementById("amigo");
 
-        li.appendChild(litext);
-        lista.appendChild(li);
-       
-        listaAmigos.push(nombre.value);
-
+     if (/\d/.test(nombre.value)) {
+       alert('Ingresa un Nombre Válido!');
+        
+         
     }else {
-        alert('ingresa un Nombre Válido!');
+        let li = document.createElement('li');
+        let liText = document.createTextNode(nombre.value);
+        li.appendChild(liText);
+        lista.appendChild(li);
+        listaAmigos.push(nombre.value);
+       
+        console.log(listaAmigos);
+    }
+       nombre.value = "";
     }
 
-    nombre.value = '';
-}
+
+
 
 function sortearAmigo() {
 
