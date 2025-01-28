@@ -15,7 +15,7 @@ function agregarAmigo() {
   } else if (listaAmigos.includes(nombre.value)) {
     // Verifica si el nombre ya está en la lista.
     document.getElementById("mensaje").textContent =
-      "Este nombre ya fue agregado."; // Muestra mensaje de duplicado.
+      "Este Amigo ya fue agregado."; // Muestra mensaje de duplicado.
     document.getElementById("mensaje").style.color = "red"; // Cambia el color del mensaje a rojo.
   } else {
     // Si el nombre es válido y no está duplicado
