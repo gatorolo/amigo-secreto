@@ -7,7 +7,7 @@ function agregarAmigo() {
   let nombre = document.getElementById("amigo"); // Obtiene el valor del input donde se escribe el nombre del amigo.
 
   if (/\d/.test(nombre.value) || nombre.value.trim() === "" || /[^A-Za-z\s]/.test(nombre.value)) {
-    // Verifica si el nombre ingresado contiene un número usando una expresión regular o el campo input está vacio.
+    // Verifica si el nombre ingresado contiene un número usando una expresión regular o el campo input está vacio o contenga carácteres especiales.
 
     document.getElementById("mensaje").textContent = "Ingresa un nombre Válido"; // Muestra un mensaje de error si el nombre contiene números.
     document.getElementById("mensaje").style.color = "red"; // Cambia el color del mensaje a rojo.
