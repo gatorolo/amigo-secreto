@@ -6,14 +6,9 @@ let listaAmigos = [];
 
 function agregarAmigo() {
   let nombre = document.getElementById("amigo"); // Obtiene el valor del input donde se escribe el nombre del amigo.
-
+   
   // Verifica si el nombre ingresado contiene un número usando una expresión regular o el campo input está vacio.
   if (/\d/.test(nombre.value) || !nombre.value.trim() || /[^A-Za-z\s]/.test(nombre.value)) {
-
-
-  if (/\d/.test(nombre.value) || nombre.value.trim() === "" || /[^A-Za-z\s]/.test(nombre.value)) {
-    // Verifica si el nombre ingresado contiene un número usando una expresión regular o el campo input está vacio o contenga carácteres especiales.
-
     document.getElementById("mensaje").textContent = "Ingresa un nombre Válido"; // Muestra un mensaje de error si el nombre contiene números.
     document.getElementById("mensaje").style.color = "red"; // Cambia el color del mensaje a rojo.
   
@@ -41,12 +36,11 @@ function agregarAmigo() {
 
     nombre.value = "";
 }
-}
 
 function sortearAmigo() {
   if (listaAmigos.length > 0) {
     let ganador = listaAmigos[Math.floor(Math.random() * listaAmigos.length)];
-    ulResultado.innerHTML = `<li>El/La ganador/ra es : ${ganador}</li>`;
+    ulResultado.innerHTML = `<li>El/La ganador/ra es: ${ganador}</li>`
     lista.innerHTML = "";
     listaAmigos = [];
     document.getElementById("mensaje").textContent = "";
