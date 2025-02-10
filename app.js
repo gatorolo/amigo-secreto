@@ -6,13 +6,17 @@ let listaAmigos = [];
 
 function agregarAmigo() {
   let nombre = document.getElementById("amigo"); // Obtiene el valor del input donde se escribe el nombre del amigo.
-   
+
   // Verifica si el nombre ingresado contiene un número usando una expresión regular o el campo input está vacio.
-  if (/\d/.test(nombre.value) || !nombre.value.trim() || /[^A-Za-z\s]/.test(nombre.value)) {
+  if (
+    /\d/.test(nombre.value) ||
+    !nombre.value.trim() ||
+    /[^A-Za-z\s]/.test(nombre.value)
+  ) {
     document.getElementById("mensaje").textContent = "Ingresa un nombre Válido"; // Muestra un mensaje de error si el nombre contiene números.
     document.getElementById("mensaje").style.color = "red"; // Cambia el color del mensaje a rojo.
-  
-  } else if (listaAmigos.includes(nombre.value)) {       // Verifica si el nombre ya está en la lista.
+  } else if (listaAmigos.includes(nombre.value)) {
+    // Verifica si el nombre ya está en la lista.
     document.getElementById("mensaje").textContent =
       " Ese amigo ya estä Participando"; // Muestra mensaje de duplicado.
     document.getElementById("mensaje").style.color = "blue"; // Cambia el color del mensaje a azul.
@@ -30,17 +34,17 @@ function agregarAmigo() {
 
     // Agrega el nombre del amigo al array listaAmigos.
     listaAmigos.push(nombre.value);
-    
   }
-    // Limpia el campo de texto después de agregar el amigo.
+  // Limpia el campo de texto después de agregar el amigo.
 
-    nombre.value = "";
+  nombre.value = "";
+  ulResultado.innerHTML = "";
 }
 
 function sortearAmigo() {
   if (listaAmigos.length > 0) {
     let ganador = listaAmigos[Math.floor(Math.random() * listaAmigos.length)];
-    ulResultado.innerHTML = `<li>El/La ganador/ra es: ${ganador}</li>`
+    ulResultado.innerHTML = `<li>El/La ganador/ra es: ${ganador}</li>`;
     lista.innerHTML = "";
     listaAmigos = [];
     document.getElementById("mensaje").textContent = "";
@@ -49,7 +53,6 @@ function sortearAmigo() {
     alert("No hay amigos para Sortear!");
   }
 }
- 
 
 
 
@@ -79,15 +82,15 @@ function sortearAmigo() {
 
 //     document.getElementById('amigoSecreto').value = mensaje;
 
-    //limpiar al dar click en el input
-    //document.getElementById('amigo').addEventListener('click', function() {
-        //quitar el borde
-    //    document.getElementById('amigo').style.border = 'none';
-        //limpiar el mensaje en el input
-     //   document.getElementById('amigo').value = "";
-        //cambiar el color de la fuente y el mensaje en el input
-      //  document.getElementById('amigo').style.color = 'black';
-    //});
+//limpiar al dar click en el input
+//document.getElementById('amigo').addEventListener('click', function() {
+//quitar el borde
+//    document.getElementById('amigo').style.border = 'none';
+//limpiar el mensaje en el input
+//   document.getElementById('amigo').value = "";
+//cambiar el color de la fuente y el mensaje en el input
+//  document.getElementById('amigo').style.color = 'black';
+//});
 //}
 // // Función para reiniciar el sorteo y habilitar el botón
 // function reiniciarSorteo() {
@@ -112,7 +115,6 @@ function sortearAmigo() {
 
 //     mostrarMensaje("Sorteo reiniciado.");
 // }
-
 
 // function cambiarEstadoBoton(boton, estado) {
 //     if (estado === 'desactivar') {
@@ -144,13 +146,13 @@ function sortearAmigo() {
 
 // //funcion que agrega un amigo al array amigos
 //  function agregarAmigo() {
-   
+
 //     //validar si el nombre ingresado esta en el array y enviar una alerta
 //     if (amigos.includes(amigos.find(amigo => amigo === document.getElementById('amigo').value.trim().toUpperCase()))) {
 //         mostrarMensaje("El amigo ya fue agregado.");
 //         return false;
 //     }
-    
+
 //     //validar si el nombre de amigo ingresado tiene caracteres especiales y enviar una alerta
 //     if (document.getElementById('amigo').value.match(/[!@#$%^&*(),.?":{}|<>]/)) {
 //         mostrarMensaje("No agregar caracteres especiales.");
@@ -177,7 +179,7 @@ function sortearAmigo() {
 //     //convertir el nombre del amigo a mayusculas y añadirlo al array amigos
 //     amigos.push(document.getElementById('amigo').value.trim().toUpperCase());
 //     //despues de añadir el nombre del amigo al array, limpiar el campo input
-//     document.getElementById('amigo').value = "";  
+//     document.getElementById('amigo').value = "";
 //     mostrarAmigos();
 //  }
 //  //funcion que recorre el array y agrega cada nombre a un elemnto <li> dentro del HTML
@@ -193,7 +195,7 @@ function sortearAmigo() {
 //             elemento.textContent = amigos[i];
 //             //Agregar el elemento <li> a la lista
 //             lista.appendChild(elemento);
-//         }  
+//         }
 //     }
 // //Funcion que selecione de manera aleatoria uno de los amigos del array usando math.random y math.floor para un indice aleatorio
 // function sortearAmigo() {
@@ -204,7 +206,7 @@ function sortearAmigo() {
 //         mostrarMensaje("No hay amigos para seleccionar.");
 //         return false;
 //     }
-    
+
 //     // Validar que mínimo haya dos amigos
 //     if (amigos.length < 2) {
 //         mostrarMensaje("Se necesitan 2 amigos para jugar.");
@@ -236,9 +238,8 @@ function sortearAmigo() {
 //         desactivarBoton(boton);
 //         mostrarMensaje("Ya se sortearon todos los amigos.");
 //     }
-    
-// }
 
+// }
 
 //     // Agregar un eventListener para detectar cuando el usuario presiona ENTER
 // document.getElementById('amigo').addEventListener('keypress', function(event) {
@@ -247,43 +248,6 @@ function sortearAmigo() {
 //         agregarAmigo();  // Llamar la función para agregar el amigo
 //     }
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // let continuar = true
 // function sortearAmigo() {
