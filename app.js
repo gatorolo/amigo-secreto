@@ -59,10 +59,7 @@ function sortearAmigo() {
     mostrarBoton();
     div.style.display = 'none';
     titulo.style.display = 'none';
-
-  } else {
-    alert("No hay amigos para Sortear!");
-  }
+  } 
 }
 
 function mostrarBoton() {
