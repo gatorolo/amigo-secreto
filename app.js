@@ -44,7 +44,7 @@ function agregarAmigo() {
 function sortearAmigo() {
   if (listaAmigos.length > 0) {
     let ganador = listaAmigos[Math.floor(Math.random() * listaAmigos.length)];
-    ulResultado.innerHTML = `<li>El/La ganador/ra es: ${ganador}</li>`;
+    ulResultado.innerHTML = `<li>El/La ganador/a es: ${ganador}</li>`;
     lista.innerHTML = "";
     listaAmigos = [];
     document.getElementById("mensaje").textContent = "";
@@ -53,6 +53,12 @@ function sortearAmigo() {
     alert("No hay amigos para Sortear!");
   }
 }
+
+
+function sortearNuevo() {
+  ulResultado.innerHTML = '';
+}
+
 
 
 
