@@ -6,11 +6,10 @@ let boton = document.getElementById("mostrar");
 let boton2 = document.getElementById("boton2");
 let div = document.querySelector(".input-wrapper");
 let titulo = document.querySelector(".section-title");
+let nombre = document.getElementById("amigo"); // Obtiene el valor del input donde se escribe el nombre del amigo.
 let listaAmigos = [];
 
 function agregarAmigo() {
-  let nombre = document.getElementById("amigo"); // Obtiene el valor del input donde se escribe el nombre del amigo.
-
   // Verifica si el nombre ingresado contiene un número usando una expresión regular o el campo input está vacio.
   if (
     /\d/.test(nombre.value) ||
@@ -48,6 +47,14 @@ function agregarAmigo() {
   
 }
 
+
+nombre.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); 
+        agregarAmigo();
+    }
+});
+
 function sortearAmigo() {
   if (listaAmigos.length > 0) {
     let ganador = listaAmigos[Math.floor(Math.random() * listaAmigos.length)];
@@ -79,6 +86,7 @@ function sortearNuevo() {
   div.style.display = 'flex';
   titulo.style.display = 'flex';
   nombre.focus();
+  nombre.value = "";
 }
 
 
