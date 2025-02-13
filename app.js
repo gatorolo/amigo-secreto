@@ -3,6 +3,9 @@
 let lista = document.getElementById("listaAmigos");
 let ulResultado = document.getElementById("resultado");
 let boton = document.getElementById("mostrar");
+let boton2 = document.getElementById("boton2");
+let div = document.querySelector(".input-wrapper");
+let titulo = document.querySelector(".section-title");
 let listaAmigos = [];
 
 function agregarAmigo() {
@@ -32,6 +35,7 @@ function agregarAmigo() {
 
     li.appendChild(litext);
     lista.appendChild(li);
+    boton2.style.display = 'flex';
 
     // Agrega el nombre del amigo al array listaAmigos.
     listaAmigos.push(nombre.value);
@@ -40,6 +44,8 @@ function agregarAmigo() {
 
   nombre.value = "";
   ulResultado.innerHTML = "";
+  nombre.focus();
+  
 }
 
 function sortearAmigo() {
@@ -50,15 +56,18 @@ function sortearAmigo() {
     listaAmigos = [];
     document.getElementById("mensaje").textContent = "";
     document.getElementById("mensaje").style.color = "";
-    mostrarBoton() 
+    mostrarBoton();
+    div.style.display = 'none';
+    titulo.style.display = 'none';
+
   } else {
     alert("No hay amigos para Sortear!");
   }
 }
 
 function mostrarBoton() {
-  let mostrar = boton.style.display = 'flex';
-  return mostrar;
+  boton.style.display = 'flex';
+  boton2.style.display = 'none'
 }
 
 function ocultarBoton() {
@@ -70,6 +79,9 @@ function ocultarBoton() {
 function sortearNuevo() {
   ulResultado.innerHTML = '';
   ocultarBoton();
+  div.style.display = 'flex';
+  titulo.style.display = 'flex';
+  nombre.focus();
 }
 
 
