@@ -2,6 +2,7 @@
 
 let lista = document.getElementById("listaAmigos");
 let ulResultado = document.getElementById("resultado");
+let boton = document.getElementById("mostrar");
 let listaAmigos = [];
 
 function agregarAmigo() {
@@ -49,15 +50,29 @@ function sortearAmigo() {
     listaAmigos = [];
     document.getElementById("mensaje").textContent = "";
     document.getElementById("mensaje").style.color = "";
+    mostrarBoton() 
   } else {
     alert("No hay amigos para Sortear!");
   }
 }
 
+function mostrarBoton() {
+  let mostrar = boton.style.display = 'flex';
+  return mostrar;
+}
+
+function ocultarBoton() {
+  let mostrar = boton.style.display = 'none';
+  return mostrar;
+}
+
 
 function sortearNuevo() {
   ulResultado.innerHTML = '';
+  ocultarBoton();
 }
+
+
 
 
 
