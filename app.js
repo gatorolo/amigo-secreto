@@ -11,9 +11,7 @@ let listaAmigos = [];
 
 function agregarAmigo() {
   // Verifica si el nombre ingresado contiene un número usando una expresión regular o el campo input está vacio.
-  if (
-    /\d/.test(nombre.value) ||
-    /[^A-Za-z\s]/.test(nombre.value)) {
+  if (/\d/.test(nombre.value) || /[^A-Za-z\s]/.test(nombre.value)) {
     document.getElementById("mensaje").textContent = "Ingresa un nombre Válido"; // Muestra un mensaje de error si el nombre contiene números.
     document.getElementById("mensaje").style.color = "red"; // Cambia el color del mensaje a rojo.
   } else if (listaAmigos.includes(nombre.value)) {
