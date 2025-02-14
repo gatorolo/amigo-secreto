@@ -13,9 +13,7 @@ function agregarAmigo() {
   // Verifica si el nombre ingresado contiene un número usando una expresión regular o el campo input está vacio.
   if (
     /\d/.test(nombre.value) ||
-    !nombre.value.trim() ||
-    /[^A-Za-z\s]/.test(nombre.value)
-  ) {
+    /[^A-Za-z\s]/.test(nombre.value)) {
     document.getElementById("mensaje").textContent = "Ingresa un nombre Válido"; // Muestra un mensaje de error si el nombre contiene números.
     document.getElementById("mensaje").style.color = "red"; // Cambia el color del mensaje a rojo.
   } else if (listaAmigos.includes(nombre.value)) {
@@ -23,6 +21,9 @@ function agregarAmigo() {
     document.getElementById("mensaje").textContent =
       " Ese amigo ya estä Participando"; // Muestra mensaje de duplicado.
     document.getElementById("mensaje").style.color = "blue"; // Cambia el color del mensaje a azul.
+  } else if (!nombre.value.trim()) {
+    document.getElementById("mensaje").textContent = "Campo vacio: Ingresa un Nombre"; 
+      document.getElementById("mensaje").style.color = "red"; 
   } else {
     // Si el nombre es válido y no está duplicado
     document.getElementById("mensaje").textContent = "El nombre es Válido"; // Muestra un mensaje de éxito.
