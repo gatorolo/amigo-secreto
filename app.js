@@ -46,9 +46,9 @@ function agregarAmigo() {
   
 }
 
-nombre.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); 
+nombre.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        e.preventDefault(); 
         agregarAmigo();
     }
 });
@@ -69,12 +69,12 @@ function sortearAmigo() {
 
 function mostrarBoton() {
   boton.style.display = 'flex';
-  boton2.style.display = 'none'
+  boton2.style.display = 'none';
 }
 
 function ocultarBoton() {
   let mostrar = boton.style.display = 'none';
-  return mostrar;
+  return;
 }
 
 
